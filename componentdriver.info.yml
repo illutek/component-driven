@@ -1,0 +1,13 @@
+name: componentdriven
+type: theme
+discription: "component driven test"
+base theme: classy
+package: Custom
+core: 8.x
+version: 1.0.0
+
+libraries:
+  - componentdriven/globalstyle
+
+regions:
+  content: Content

@@ -1,0 +1,32 @@
+// /////////////////////////
+// @@ MIXINS
+// ////////////////////////
+
+// new mediaquery with maps
+// https://github.com/illutek/bullensteeg
+
+$breakpoints: (
+  phone: 30em,  //more than 480px
+  tablet: 37.5em,  //more than 600px
+  desktop: 62.5em,  //more than 1000px
+  big-desktop: 118.75em   //more than 1900px
+);
+
+@mixin mq($size) {
+  @if map-has-key($breakpoints, $size) {
+    // a value in the map
+    $breakpoint: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if type-of($size) == number and not unitless($size) {
+    // a custom value px or em
+    @media screen and (min-width: $size) {
+      @content;
+    }
+  } @else {
+    // no map-value or number
+    @error 'The breakpoints map does not have the key of `#{$size}`';
+  }
+}

@@ -1,0 +1,48 @@
+// /////////////////////////
+// @@ TYPOGRAPHY
+// ////////////////////////
+
+html {
+  font-family: $ff-sans;
+}
+
+body {
+font-size: $ff-size;
+line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+font-weight: $fw-semi-bold;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+h1 {
+font-size: 4rem;  
+margin-bottom: $margin-b;
+  
+@include mq(desktop) {
+  font-size: 3vw; 
+}
+  
+}
+
+h2 {
+font: {
+  size: calc(#{$ff-size} + .9rem);
+}
+margin-bottom: $margin-b;
+}
+
+h3 {
+font: {
+  size: calc(#{$ff-size} + .4rem);
+}
+margin-bottom: 1rem;
+}
+
+strong {
+font: {
+  weight: $fw-bold;
+}
+}
