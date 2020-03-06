@@ -44,32 +44,40 @@
 #}
 <div class="layout-container">
 
-  <header class="r-pageheader" role="banner">
-    {{ page.header }}
-  </header>
 
-  {{ page.primary_menu }}
+		{# start r-overlay-contact #}
+		{% include directory ~ '/templates/partials/pageheader.twig' %}
+		{# end r-overlay-contact #}
+    
+	<div class="container">
 
-  {{ page.breadcrumb }}
+		{{ page.primary_menu }}
 
-  {{ page.highlighted }}
+		{{ page.breadcrumb }}
 
-  {{ page.help }}
+		{{ page.highlighted }}
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+		{{ page.help }}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+		<main role="main">
+			<a id="main-content" tabindex="-1"></a>
+			{# link is in html.html.twig #}
+
+			<div class="layout-content">
+				{{ page.content }}
+			</div>
+			{# /.layout-content #}
 
 
-  </main>
+		</main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+		{% if page.footer %}
+			<footer role="contentinfo">
+				{{ page.footer }}
+			</footer>
+		{% endif %}
 
-</div>{# /.layout-container #}
+	</div>
+	{# /.layout-container #}
+
+</div>
